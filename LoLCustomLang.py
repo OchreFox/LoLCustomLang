@@ -38,7 +38,8 @@ for proc in psutil.process_iter():
         closed_processes = True
 
 # Create shortcut
-create_shortcut = config.get('DEFAULT', 'CreateShortcut')
+create_shortcut = config.getboolean('DEFAULT', 'CreateShortcut')
+print(create_shortcut)
 if create_shortcut:
     current_dir = os.getcwd()
     executable = os.path.join(current_dir, "LoLCustomLang.exe")
